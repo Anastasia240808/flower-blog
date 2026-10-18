@@ -1,6 +1,5 @@
 # Зависимости 
 node_modules/
-vendor/
 
 # Кэш Smarty 
 src/templates/compiled/*
