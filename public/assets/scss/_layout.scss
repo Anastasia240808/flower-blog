@@ -1,0 +1,197 @@
+@use "variables" as *;
+
+// шапка
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: rgba($color-bg, 0.85);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid $color-border;
+
+    &__inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        height: 68px;
+
+        @include mobile {
+            height: 60px;
+        }
+    }
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+    gap: 12px;
+
+    &__icon {
+        display: grid;
+        place-items: center;
+        width: 40px;
+        height: 40px;
+        border-radius: 12px;
+        background: linear-gradient(135deg, $color-accent, #d64a7a);
+    }
+
+    &__text {
+        font-family: $font-heading;
+        font-size: 1.25rem;
+        font-weight: 600;
+        white-space: nowrap;
+
+        @include mobile {
+            font-size: 1.05rem;
+        }
+    }
+
+    @include mobile {
+        gap: 8px;
+    }
+}
+
+.nav {
+    display: flex;
+    gap: 6px;
+
+    @include mobile {
+        gap: 2px;
+    }
+
+    &__link {
+        padding: 8px 16px;
+        border-radius: 999px;
+        font-size: 0.95rem;
+        font-weight: 500;
+        color: $color-muted;
+        white-space: nowrap;
+        transition:
+            background 0.2s,
+            color 0.2s;
+
+        @include mobile {
+            display: inline-flex;
+            align-items: center;
+            min-height: 40px;
+            padding: 6px 12px;
+            font-size: 0.9rem;
+        }
+
+        &:hover {
+            color: $color-text;
+            background: rgba($color-green-700, 0.08);
+        }
+
+        &.is-active {
+            color: #fff;
+            background: $color-green-900;
+        }
+    }
+}
+
+// для узких экранов
+.nav__link--home {
+    @include small {
+        display: none;
+    }
+}
+
+// выпадающее меню категорий
+.dropdown {
+    position: relative;
+
+    // На телефоне меню раскрывается на всю ширину шапки,
+    // тк оно может вылезти за край экрана
+    @include mobile {
+        position: static;
+    }
+
+    // summary выглядит как обычная ссылка меню
+    summary {
+        list-style: none;
+        cursor: pointer;
+
+        &::-webkit-details-marker {
+            display: none;
+        }
+
+        &::after {
+            content: "▾";
+            margin-left: 6px;
+            font-size: 0.8em;
+        }
+    }
+
+    &__menu {
+        position: absolute;
+        top: calc(100% + 8px);
+        right: 0;
+        z-index: 20;
+        display: flex;
+        flex-direction: column;
+        min-width: 240px;
+        padding: 8px;
+        background: $color-surface;
+        border: 1px solid $color-border;
+        border-radius: $radius-sm;
+        box-shadow: $shadow-md;
+        // Если категорий много - меню прокручивается
+        max-height: calc(100vh - 100px);
+        overflow-y: auto;
+
+        @include mobile {
+            top: 100%;
+            left: 16px;
+            right: 16px;
+            min-width: 0;
+            margin-top: 6px;
+        }
+    }
+
+    &__item {
+        padding: 10px 14px;
+        border-radius: 8px;
+        font-size: 0.95rem;
+        transition: background 0.2s;
+
+        @include mobile {
+            padding: 12px 14px;
+        }
+
+        &:hover {
+            background: $color-accent-soft;
+        }
+    }
+}
+
+// подвал
+.footer {
+    background: $color-green-900;
+    color: rgba(#fff, 0.7);
+    padding: 36px 0;
+
+    @include mobile {
+        padding: 28px 0;
+    }
+
+    &__inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+        flex-wrap: wrap;
+    }
+
+    &__logo {
+        font-family: $font-heading;
+        font-size: 1.2rem;
+        color: #fff;
+    }
+
+    &__text {
+        font-size: 0.9rem;
+    }
+}

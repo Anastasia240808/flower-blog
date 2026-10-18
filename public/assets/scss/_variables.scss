@@ -1,0 +1,47 @@
+// цвета
+$color-bg: #f8f5ef;
+$color-surface: #ffffff;
+$color-text: #1c2b22;
+$color-muted: #66736b;
+$color-border: #e9e3d6;
+
+$color-green-900: #14301f;
+$color-green-700: #1f4d33;
+$color-green-100: #e3f0e7;
+$color-accent: #e8704f;
+$color-accent-soft: #fde7de;
+
+// размеры
+$radius-sm: 12px;
+$radius: 20px;
+$radius-lg: 32px;
+$container-width: 1180px;
+
+// тени
+$shadow-sm: 0 1px 2px rgba(20, 48, 31, 0.06);
+$shadow-md: 0 14px 34px rgba(20, 48, 31, 0.1);
+
+// шрифты
+$font-text: "Inter", "Segoe UI", Arial, sans-serif;
+$font-heading: "Fraunces", Georgia, "Times New Roman", serif;
+
+// миксин для адаптивности
+@mixin tablet {
+    @media (max-width: 960px) {
+        @content;
+    }
+}
+
+@mixin mobile {
+    @media (max-width: 640px) {
+        @content;
+    }
+}
+
+
+// узкие телефоны
+@mixin small {
+    @media (max-width: 400px) {
+        @content;
+    }
+}

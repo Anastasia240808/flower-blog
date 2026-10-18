@@ -1,0 +1,17 @@
+# Зависимости 
+node_modules/
+vendor/
+
+# Кэш Smarty 
+src/templates/compiled/*
+src/templates/cache/*
+!src/templates/compiled/.gitkeep
+!src/templates/cache/.gitkeep
+
+# Системные и редакторские файлы
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+# Служебные метки Windows
+*:Zone.Identifier

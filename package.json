@@ -1,0 +1,11 @@
+{
+    "name": "flower-blog",
+    "private": true,
+    "scripts": {
+        "sass": "sass --no-source-map public/assets/scss/style.scss public/assets/css/style.css",
+        "sass:watch": "sass --watch --no-source-map public/assets/scss/style.scss public/assets/css/style.css"
+    },
+    "devDependencies": {
+        "sass": "^1.77.0"
+    }
+}
