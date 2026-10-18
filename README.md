@@ -9,12 +9,6 @@
 
 ## Запуск
 
-1. Установить зависимости PHP (Smarty). Папка `vendor/` в репозиторий не входит:
-
-```bash
-   docker run --rm -v "$PWD":/app composer install
-```
-
 2. Запустить сайт и базу данных:
 
 ```bash
