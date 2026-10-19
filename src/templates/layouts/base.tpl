@@ -59,7 +59,6 @@
     <footer class="footer">
         <div class="container footer__inner">
             <p class="footer__logo">Блог о цветах</p>
-            <p class="footer__text">© {$smarty.now|date_format:"Y"} Все права защищены.</p>
         </div>
     </footer>
 
