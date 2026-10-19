@@ -1,4 +1,4 @@
---Схема бд
+-- Схема бд
 
 CREATE TABLE IF NOT EXISTS categories (
     id INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
